@@ -59,7 +59,7 @@ socket.connect()
 Implements `createAndJoinChannel(socket: Socket)` on [Socket Connection](#socket-connection)
 ```kotlin
 fun createAndJoinChannel(socket: Socket) {
-  with(socket.createChannel(topic = "rooms:lobby")) {
+  with(socket.channel(topic = "rooms:lobby")) {
     join(payload = null,
         success = { message: Message? ->
           pushMessage(channel)
