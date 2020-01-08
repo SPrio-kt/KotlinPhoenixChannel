@@ -46,13 +46,13 @@ class Socket @JvmOverloads constructor(
   private var messageBuffer: ConcurrentLinkedQueue<String> = ConcurrentLinkedQueue()
 
   fun connect() {
-    // disconnect()
-    // val httpUrl = endpointUri.replaceFirst(Regex("^ws:"), "http:")
-    //     .replaceFirst(Regex("^wss:"), "https:")
-    // println(httpUrl)
-    // val request = Request.Builder().url(httpUrl).build()
-    // println(request)
-    // webSocket = httpClient.newWebSocket(request, phoenixWebSocketListener)
+    disconnect()
+    val httpUrl = endpointUri.replaceFirst(Regex("^ws:"), "http:")
+        .replaceFirst(Regex("^wss:"), "https:")
+    println(httpUrl)
+    val request = Request.Builder().url(httpUrl).build()
+    println(request)
+    webSocket = httpClient.newWebSocket(request, phoenixWebSocketListener)
   }
 
   fun disconnect(code: Int = 3000) {
