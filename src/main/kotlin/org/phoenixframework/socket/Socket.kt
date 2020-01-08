@@ -52,7 +52,7 @@ class Socket @JvmOverloads constructor(
     println("http URl: ${httpUrl}")
     val request = Request.Builder().url(httpUrl).build()
     println("REQUEST: ${request}")
-    webSocket = httpClient.newWebSocket(request, phoenixWebSocketListener)
+    // webSocket = httpClient.newWebSocket(request, phoenixWebSocketListener)
   }
 
   fun disconnect(code: Int = 3000) {
