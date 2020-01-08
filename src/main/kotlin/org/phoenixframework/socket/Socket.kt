@@ -49,9 +49,9 @@ class Socket @JvmOverloads constructor(
     disconnect()
     val httpUrl = endpointUri.replaceFirst(Regex("^ws:"), "http:")
         .replaceFirst(Regex("^wss:"), "https:")
-    println(httpUrl)
+    println("http URl: ${httpUrl}")
     val request = Request.Builder().url(httpUrl).build()
-    println(request)
+    println("REQUEST: ${request}")
     webSocket = httpClient.newWebSocket(request, phoenixWebSocketListener)
   }
 
